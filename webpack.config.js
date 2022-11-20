@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-	mode: "development",
-	devtool: false,
+	mode: process.env.NODE_ENV === "production" ? "production" : "development",
+	devtool: 'source-map',
 	module: {
 		rules: [
 			{
