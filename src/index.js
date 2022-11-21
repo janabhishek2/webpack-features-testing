@@ -1,3 +1,5 @@
+import "./styles/index.scss";
+
 const agesMap = {
 	abhishek: 25,
 	john: 30,
