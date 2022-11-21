@@ -1,0 +1,18 @@
+@use "variables";
+
+body {
+	margin: 0;
+	background-color: variables.$red-variable;
+	color: var(--text);
+	font-size: 26px;
+}
+
+main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+button {
+	font-size: 1.5rem;
+}

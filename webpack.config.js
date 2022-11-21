@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const path = require('path');
 
 module.exports = {
@@ -11,13 +13,19 @@ module.exports = {
 				use: {
 					loader: 'babel-loader'
 				}
+			},
+			{
+				test: /\.s?css$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
 			}
 		]
 	},
+	plugins: [new MiniCssExtractPlugin()],
 	devServer: {
 		static: {
 			directory: path.join(__dirname, 'dist') 
 		},
-		port: 9000
+		port: 9000,
+		hot: true
 	}
 }
